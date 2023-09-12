@@ -45,10 +45,10 @@ def loop():
         #    Playing song 1...
         topic, data = subscriber.recv_multipart()
         stringa_unicode = data.decode('utf-8')
-        if(stringa_unicode == "ON"):
+        if(stringa_unicode == "Buzzer ON"):
             Buzz.start(50)
             i=1
-            while( stringa_unicode == "ON" and i<len(song_1)):
+            while( stringa_unicode == "Buzzer ON" and i<len(song_1)):
                 topic, data = subscriber.recv_multipart()
                 stringa_unicode = data.decode('utf-8')
                 Buzz.ChangeFrequency(song_1[i]) # Change the frequency along the song note
